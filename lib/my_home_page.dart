@@ -15,29 +15,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-    
       _counter++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-  
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
-        leading: Builder(builder: (context)=>IconButton(onPressed: () {
-          Scaffold.of(context).openDrawer()
-        }, icon: const Icon(Icons.menu))),
+        leading: Builder(
+          builder: (context) => IconButton(
+            onPressed: () => Scaffold.of(context).openDrawer(),
+            icon: const Icon(Icons.menu),
+          ),
+        ),
       ),
       drawer: const MenuLateral(),
       body: const Center(
         child: Text(
           "Selecione uma aula no menu",
-          style:TextStyle(
-            fontSize: 18,
-          ),
+          style: TextStyle(fontSize: 18),
         ),
       ),
     );
